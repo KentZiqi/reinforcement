@@ -52,7 +52,8 @@ class ValueIterationAgent(ValueEstimationAgent):
                     tempValues[state] = 0
                 else:
                     actions = self.mdp.getPossibleActions(state)
-                    maxValue = -1000000
+                    import sys
+                    maxValue = -sys.maxint - 1
                     for action in actions:
                         QValue = self.computeQValueFromValues(state,action)
                         if QValue > maxValue:
